@@ -1,35 +1,52 @@
 {
-    "items":[{
-    "id":1,
-     "Name":"Book",
-     "image":"https://images.pexels.com/photos/1643033/pexels-photo-1643033.jpeg",
-    "Description":"A mystery novel quite instering to read",
-    "price":100,
-    "size":"small"
- },
- {
-    "id":2,
-    "Name":"Cooler",
-    "image":"https://media.istockphoto.com/id/1016471162/photo/electronic-room-tower-fan-and-humidifier-on-white-wall-background.jpg?s=1024x1024&w=is&k=20&c=Elc4GpJXi1CdHjuB_eA1dhvm92DEtd47qjHzz6NTj1g=",
-    "Description":"A cooler with many functions in working condition",
-    "price":2000,
-    "size":"small"
- },
- {
-    "id":3,
-    "Name":"calculator",
-    "image":"https://images.pexels.com/photos/220301/pexels-photo-220301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "Description":"A scientific calculator with different functuions",
-    "price":340,
-    "size":"small"
- },
- {
-    "id":4,
-    "Name":"Laptop",
-    "image":"https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "Description":"A laptop with a good processor and ram",
-    "price":10000,
-    "size":"large"
- }
-]
+  "items": [
+    {
+      "id": 1,
+      "Name": "Book",
+      "image": "https://images.pexels.com/photos/1643033/pexels-photo-1643033.jpeg",
+      "Description": "A mystery novel quite instering to read",
+      "price": 100,
+      "size": "small"
+    },
+    {
+      "id": 2,
+      "Name": "Cooler",
+      "image": "https://media.istockphoto.com/id/1016471162/photo/electronic-room-tower-fan-and-humidifier-on-white-wall-background.jpg?s=1024x1024&w=is&k=20&c=Elc4GpJXi1CdHjuB_eA1dhvm92DEtd47qjHzz6NTj1g=",
+      "Description": "A cooler with many functions in working condition",
+      "price": 2000,
+      "size": "small"
+    },
+    {
+      "id": 3,
+      "Name": "calculator",
+      "image": "https://images.pexels.com/photos/220301/pexels-photo-220301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "Description": "A scientific calculator with different functuions",
+      "price": 340,
+      "size": "small"
+    },
+    {
+      "id": 4,
+      "Name": "Laptop",
+      "image": "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "Description": "A laptop with a good processor and ram",
+      "price": 10000,
+      "size": "large"
+    },
+    {
+      "id": "6984",
+      "Name": "American Delight",
+      "image": "https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 80,
+      "Description": "a izza in good ",
+      "size": "small"
+    },
+    {
+      "id": "2e6e",
+      "Name": "Phone Case",
+      "image": "https://th.bing.com/th/id/OIP.k6AyqfHoNGs2ZP9WGr8tuQHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7",
+      "price": 100,
+      "Description": "Phone case for iphone",
+      "size": "Big"
+    }
+  ]
 }
