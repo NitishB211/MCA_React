@@ -22,10 +22,16 @@ function Navbar(){
         <Link className="nav-link active" aria-current="page" to="/home"> <h5>Home</h5></Link>
         </li>
         <li className="nav-item">
-        <Link  className="nav-link" to="/features"> <h5>Features</h5></Link>
+        <Link  className="nav-link" to="/add-item"> <h5>AddPaidItem</h5></Link>
         </li>
         <li className="nav-item">
         <Link  className="nav-link" to="/aboutus"> <h5>AboutUs</h5></Link>
+        </li>
+        <li className="nav-item">
+        <Link  className="nav-link" to="/contact-us"> <h5>ContactUs</h5></Link>
+        </li>
+        <li className="nav-item">
+        <Link  className="nav-link" to="/show-item"> <h5>ShowItem</h5></Link>
         </li>
         <li className="nav-item dropdown">
         <a  className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
