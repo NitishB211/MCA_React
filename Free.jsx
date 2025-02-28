@@ -7,6 +7,8 @@ axios is used to send the request like "Get or Put request"
 1)- import axios from "axios";
 2)- import { useEffect, useState } from "react";
 
+thirdly we create a form using formik and we also use yup using command: npm i formik yup in new terminal or powershell
+Now create a new component file AddItem in component folder of src
 
 */
 
@@ -18,7 +20,7 @@ function Free() {
     const [value, setValue] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5001/items")
+        axios.get("http://localhost:5001/items")// To send the get request using axios use command: axios.get("http://localhost:5001/items") where https//localhost/:5001 is json server port 
             .then(response => {
                 setValue(response.data);
             })
@@ -28,7 +30,15 @@ function Free() {
     }, []);
 
     return (
+        /* Now use the card from BootStrap. Only write this much code
+        
+                    <div className="card" style={{ width: "18rem" }} key={item.id}>
+                        <img src={item.image} className="card-img-top" alt={item.Name} />
+           Similarly for other like price or name etc. use {item.price}{item.name}
+           like description write  {item.description}
+           */
         <>
+        
             <h1>Item List</h1>
             <div>
                 {value.map(item => (
@@ -37,7 +47,6 @@ function Free() {
                         <div className="card-body">
                             <h5 className="card-title">Name: {item.Name}</h5>
                             <h5 className="card-title">Description: {item.Description}</h5>
-                            <h5 className="card-title">Price: {item.price}</h5>
                             <h5 className="card-title">size: {item.size}</h5>
 
                         </div>
