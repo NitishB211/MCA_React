@@ -13,8 +13,8 @@ function Footer() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/features" className="nav-link px-2 text-body-secondary">
-                Features
+              <Link to="/add-item" className="nav-link px-2 text-body-secondary">
+                AddPaidItem
               </Link>
             </li>
             <li className="nav-item">
