@@ -1,0 +1,119 @@
+// server.js
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+const app = express();
+const PORT = 5001;
+
+// Use CORS to allow requests from different origins
+app.use(cors());
+
+// Middleware to parse JSON bodies
+app.use(bodyParser.json());
+
+// In-memory data (replace with a database like MongoDB in a real-world app)
+let items = [
+    {
+        id: 1,
+        Name: "Apple Smart Phone",
+        Description: "High performance with latest Software Apple phone in working condition",
+        price: 1000,
+        size: "5.5 inch",
+        image: "https://images.pexels.com/photos/257923/pexels-photo-257923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        reviews: [],
+    },
+    {
+        id: 2,
+        Name: "Wooden Table",
+        Description: "$ leg wooden table for placing items.",
+        price: 200,
+        size: "Medium",
+        image: "https://images.pexels.com/photos/1209776/pexels-photo-1209776.jpeg",
+        reviews: [],
+    }
+];
+
+let students = [
+    {
+        id: 1,
+        name: "John Doe",
+        sapPoints: 50, // Student Exchange Points (SAP)
+    },
+];
+
+// 1. Get all items
+app.get('/items', (req, res) => {
+    res.json(items);
+});
+
+// 2. Get an item by ID
+app.get('/items/:id', (req, res) => {
+    const itemId = parseInt(req.params.id, 10);
+    const item = items.find(item => item.id === itemId);
+    if (item) {
+        res.json(item);
+    } else {
+        res.status(404).json({ message: 'Item not found' });
+    }
+});
+
+// 3. Add a new item (with SAP points for the student)
+app.post('/items', (req, res) => {
+    const { Name, Description, price, size, image, studentId } = req.body;
+    const newItem = {
+        id: items.length + 1,
+        Name,
+        Description,
+        price,
+        size,
+        image,
+        reviews: [],
+    };
+
+    // Check if the student exists and add SAP points
+    const student = students.find(student => student.id === studentId);
+    if (student) {
+        student.sapPoints += 10;  // Award 10 SAP points for listing an item
+    }
+
+    items.push(newItem);
+    res.status(201).json(newItem);
+});
+
+// 4. Add a review for an item (with SAP points for the student)
+app.post('/items/review', (req, res) => {
+    const { review, itemId, studentId } = req.body;
+    
+    const item = items.find(item => item.id === itemId);
+    if (!item) {
+        return res.status(404).json({ message: 'Item not found' });
+    }
+
+    // Add the review to the item
+    item.reviews.push(review);
+
+    // Award SAP points to the student for submitting a review
+    const student = students.find(student => student.id === studentId);
+    if (student) {
+        student.sapPoints += 5;  // Award 5 SAP points for submitting a review
+    }
+
+    res.status(200).json({ message: 'Review added successfully', updatedItem: item });
+});
+
+// 5. Get student details and SAP points
+app.get('/students/:id', (req, res) => {
+    const studentId = parseInt(req.params.id, 10);
+    const student = students.find(student => student.id === studentId);
+    if (student) {
+        res.json(student);
+    } else {
+        res.status(404).json({ message: 'Student not found' });
+    }
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
